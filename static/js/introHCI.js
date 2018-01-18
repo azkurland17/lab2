@@ -1,13 +1,5 @@
 'use strict';
 
-function projectClick(e) { 
-    // prevent the page from reloading      
-    //e.preventDefault();
-    // In an event handler, $(this) refers to      
-    // the object that triggered the event      
-    $(this).css("background-color", "#7fff00");
-}
-
 // Call this function when the page loads (the "ready" event)
 $(document).ready(function() {
 	initializePage();
@@ -21,10 +13,16 @@ function initializePage() {
 		$('.jumbotron h1').text("Javascript is connected");
 	});
 
-
+	$("a.thumbnail").click(projectClick);
 
 	// Add any additional listeners here
 	// example: $("#div-id").click(functionToCall);
+}
 
-	$("a.thumbnail").click(projectClick);
+function projectClick(e) { 
+    // prevent the page from reloading      
+    e.preventDefault();
+    // In an event handler, $(this) refers to      
+    // the object that triggered the event      
+    $(this).css("background-color", "#7fff00");
 }
